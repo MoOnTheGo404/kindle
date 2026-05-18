@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
+  basePath: "/kindle",
+  assetPrefix: "/kindle/",
   images: {
     unoptimized: true,
   },
