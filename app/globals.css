@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(242, 201, 197, 0.35), transparent 34rem),
+    radial-gradient(circle at 85% 12%, rgba(216, 167, 106, 0.16), transparent 28rem),
+    linear-gradient(180deg, #fbf4ee 0%, #f7ede6 100%);
+  color: #243033;
+}
+
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+::selection {
+  background: #f2c9c5;
+  color: #243033;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .story-kidney {
+    animation: story-kidney 7.5s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .story-bridge-left {
+    animation: story-bridge-left 7.5s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .story-bridge-right {
+    animation: story-bridge-right 7.5s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  .story-line {
+    animation: story-line 7.5s ease-in-out infinite;
+  }
+
+  .story-person {
+    animation: story-person 7.5s ease-in-out infinite;
+  }
+}
+
+@keyframes story-kidney {
+  0% {
+    opacity: 0.55;
+    transform: translateY(8px) scale(0.9);
+  }
+
+  42%,
+  78% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0.55;
+    transform: translateY(8px) scale(0.9);
+  }
+}
+
+@keyframes story-bridge-left {
+  0% {
+    transform: translateX(-62px);
+  }
+
+  42%,
+  78% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-62px);
+  }
+}
+
+@keyframes story-bridge-right {
+  0% {
+    transform: translateX(62px);
+  }
+
+  42%,
+  78% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(62px);
+  }
+}
+
+@keyframes story-line {
+  0% {
+    stroke-dashoffset: 180;
+    opacity: 0.35;
+  }
+
+  38%,
+  78% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -180;
+    opacity: 0.35;
+  }
+}
+
+@keyframes story-person {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
